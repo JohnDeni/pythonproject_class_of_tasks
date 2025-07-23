@@ -26,3 +26,18 @@ class Task():
         status = "Завершено" if self.completed else "Не завершено"
         return f"{self.name} — {self.description} (до {self.deadline}) | {status}"
 
+class TaskManager():
+    def __init__(self):
+        self.tasks = []
+
+    def create_task(self, name, description, deadline):
+        task = Task(name, description, deadline)
+        self.tasks.append(task)
+        print(f"Завдання {name} створено")
+
+    def list_tasks(self):
+        if not self.tasks:
+            print("Жодного завдання не має")
+            return
+        for i, task in enumerate(self.tasks, 1):
+            print(f"{i}. {task}")
