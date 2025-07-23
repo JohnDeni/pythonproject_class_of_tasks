@@ -1,0 +1,29 @@
+# IDE
+.idea/
+
+# Віртуальне середовище
+venv/
+env/
+
+# Кеші Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Системні файли
+.DS_Store
+Thumbs.db
+
+# Журнали
+*.log
+
+# Тестові файли/вихідні дані
+*.out
+*.tmp
+
+# Бази даних або локальні конфіги
+*.sqlite3
+*.db
+*.env
+.env*
+
