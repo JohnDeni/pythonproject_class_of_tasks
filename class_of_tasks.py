@@ -22,3 +22,7 @@ class Task():
     def mark_as_done(self):
         self.completed = True
 
+    def __str__(self):
+        status = "Завершено" if self.completed else "Не завершено"
+        return f"{self.name} — {self.description} (до {self.deadline}) | {status}"
+
