@@ -1,17 +1,22 @@
-
+from datetime import datetime
 class Task():
     def __init__(self, name, description, deadline):
         self.name = name
         self.description = description
-        self.deadline = deadline
-        self.completed = False
+        self.deadline = datetime.strptime(deadline, "%Y-%m-%d").date()
+        self.is_completed = False
 
     def mark_as_done(self):
-        self.completed = True
+        self.is_completed = True
 
     def __str__(self):
-        status = "Завершено" if self.completed else "Не завершено"
-        return f"{self.name} — {self.description} (до {self.deadline}) | {status}"
+        status = "Завершено" if self.is_completed else "Не завершено"
+        return (
+            f"Назва: {self.name}\n"
+            f"Опис: {self.description}\n"
+            f"Дедлайн: {self.deadline}\n"
+            f"Статус: {status}"
+        )
 
 class TaskManager():
     def __init__(self):
